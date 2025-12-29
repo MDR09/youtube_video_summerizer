@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Summarizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="youtube-icon">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                <h1>YouTube Video Summarizer</h1>
+            </div>
+            <p class="tagline">Transform lengthy videos into concise, readable summaries</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="input-header">
+                    <h2>Enter YouTube Video URL</h2>
+                    <span class="hint">Paste the video link and get an AI-powered summary</span>
+                </div>
+                <div class="url-input-wrapper">
+                    <svg class="url-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                    <input type="url" id="youtubeUrl" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off">
+                </div>
+                <div class="button-group">
+                    <button id="summarizeBtn" class="btn primary">
+                        <span class="btn-text">Generate Summary</span>
+                        <span class="btn-loader"></span>
+                    </button>
+                    <button id="clearBtn" class="btn secondary">Clear</button>
+                </div>
+            </section>
+
+            <section id="outputSection" class="output-section hidden">
+                <div class="output-header">
+                    <h2>Video Summary</h2>
+                    <button id="copyBtn" class="btn icon-btn" title="Copy to clipboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <article class="summary-card">
+                    <div class="summary-item">
+                        <h3 class="label">Title</h3>
+                        <p id="titleOutput" class="content title-content"></p>
+                    </div>
+
+                    <div class="summary-item">
+                        <h3 class="label">Summary</h3>
+                        <div id="summaryOutput" class="content summary-content"></div>
+                    </div>
+
+                    <div class="summary-item">
+                        <h3 class="label">Key Message</h3>
+                        <p id="keyMessageOutput" class="content key-message-content"></p>
+                    </div>
+
+                    <div class="summary-item">
+                        <h3 class="label">Tone</h3>
+                        <span id="toneOutput" class="tone-badge"></span>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built with ❤️ for content creators and learners</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
