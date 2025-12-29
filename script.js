@@ -1,7 +1,7 @@
 // ==========================================
 // CONFIGURATION - Set your n8n webhook URL here
 // ==========================================
-const N8N_WEBHOOK_URL = 'https://youtube-video-summarizer-n8n.onrender.com/webhook/yt_video_summarizer'; // Replace with your n8n webhook URL
+const N8N_WEBHOOK_URL = 'https://youtube-video-summarizer-n8n.onrender.com/webhook/youtube-video-summarizer'; // Replace with your n8n webhook URL
 
 // DOM Elements
 const youtubeUrlInput = document.getElementById('youtubeUrl');
